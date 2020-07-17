@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <button type="button" class="btn btn-primary" v-on:click="toggleLogin">Login</button>
-    <LoginDialog :isOpen="isToggle" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <LoginModal :isOpen="isToggle" :onClose="toggleLogin" />
+    <HelloWorld msg="Welcome to Your App" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import LoginDialog from "@/components/Login.vue";
+import LoginModal from "@/components/LoginModal.vue";
 
 export default {
   name: "Home",
@@ -17,11 +17,13 @@ export default {
     isToggle: false
   }),
   methods: {
-    toggleLogin: () => {}
+    toggleLogin: function toggleLogin() {
+      this.isToggle = !this.isToggle;
+    },
   },
   components: {
     HelloWorld,
-    LoginDialog
+    LoginModal
   }
 };
 </script>
