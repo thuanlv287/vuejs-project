@@ -6,15 +6,22 @@
       <span v-if="todo.completed" class="done">Done</span>
       <span v-else class="uncomplete">Uncomplete</span>
     </div>
-    <button>Do</button>
+    <span v-on:click="removeTodo(todo.id)">remove </span>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "Todo",
   props: ["todo"],
-  computed: {}
+  computed: {},
+  methods: {
+    removeTodo: function (id) {
+      this.$emit("removeTodoE", {id})
+    }
+  },
+  
 };
 </script>
 
