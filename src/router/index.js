@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Todo from "@/views/Todo.vue";
+import Post from "@/views/Post.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ const routes = [
     path: "/todo",
     name: "Todo sample",
     component: Todo
+  },
+  {
+    path: "/posts",
+    name: "posts",
+    component: Post
   }
 ];
 
